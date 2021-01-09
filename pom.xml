@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.itcast.health</groupId>
+    <artifactId>health_parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>health_api</module>
+        <module>health_commons</module>
+        <module>health_service</module>
+        <module>health_web</module>
+    </modules>
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.0.RELEASE</version>
+    </parent>
+
+    <properties>
+        <springboot-dubbo-version>2.7.5</springboot-dubbo-version>
+        <mybatisplus.version>3.3.2</mybatisplus.version>
+        <fastjson.version>1.2.72</fastjson.version>
+        <health.api.version>1.0-SNAPSHOT</health.api.version>
+        <health.commons.version>1.0-SNAPSHOT</health.commons.version>
+        <health.core.version>1.0-SNAPSHOT</health.core.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.itcast.health</groupId>
+                <artifactId>health_api</artifactId>
+                <version>${health.api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.itcast.health</groupId>
+                <artifactId>health_commons</artifactId>
+                <version>${health.commons.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.itcast.health</groupId>
+                <artifactId>health_core</artifactId>
+                <version>${health.core.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>

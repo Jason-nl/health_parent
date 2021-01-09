@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="health_core" />
+        <module name="health_pc" />
+        <module name="health_commons" />
+        <module name="health_api" />
+        <module name="health_appointment" />
+        <module name="health_h5" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="health_api" target="8" />
+      <module name="health_appointment" target="8" />
+      <module name="health_commons" target="8" />
+      <module name="health_core" target="8" />
+      <module name="health_h5" target="8" />
+      <module name="health_parent" target="1.8" />
+      <module name="health_pc" target="8" />
+      <module name="health_service" target="8" />
+      <module name="health_web" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="health_api" options="-parameters" />
+      <module name="health_appointment" options="-parameters" />
+      <module name="health_commons" options="-parameters" />
+      <module name="health_core" options="-parameters" />
+      <module name="health_h5" options="-parameters" />
+      <module name="health_pc" options="-parameters" />
+      <module name="health_service" options="-parameters" />
+      <module name="health_web" options="-parameters" />
+    </option>
+  </component>
+</project>
