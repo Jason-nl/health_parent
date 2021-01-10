@@ -1,6 +1,9 @@
 package cn.itcast.health.controller;
 
+import cn.itcast.health.entity.PageResult;
+import cn.itcast.health.entity.QueryPageBean;
 import cn.itcast.health.entity.Result;
+import cn.itcast.health.pojo.CheckItem;
 import cn.itcast.health.service.CheckItemService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -18,15 +21,25 @@ public class CheckItemController {
     @Reference
     private CheckItemService checkItemService;
 
-    @ApiOperation(value = "查询功能", notes = "检查项查询列表信息")
-    @GetMapping("findAll")
-    public Result findAll() {
-        return new Result(checkItemService.list());
+    @ApiOperation(value = "分页功能", notes = "分页查询")
+    @PostMapping("/page")
+    public Result findPage(@RequestBody QueryPageBean pageBean) {
+        PageResult<CheckItem> pageResult = checkItemService.findPage(pageBean);
+        return new Result(pageResult);
     }
 
-    @ApiOperation(value = "删除功能",notes = "根据ID删除指定的检查项")
+    @ApiOperation(value = "新增或更新功能",notes = "新增/更新一个检查项")
+    @PostMapping("saveOrUpdate")
+    public Result saveOrUpdate(@RequestBody CheckItem checkItem) {
+        boolean flag = checkItemService.saveOrUpdate(checkItem);
+        return new Result(flag);
+    }
+
+    @ApiOperation(value = "删除功能", notes = "根据id删除指定的检查项")
     @DeleteMapping("delete/{id}")
     public Result delete(@PathVariable("id") int id) {
-        return new Result(checkItemService.removeById(id));
+        // 逻辑删除
+        boolean flag = checkItemService.deleteByLogic(id);
+        return new Result(flag);
     }
 }

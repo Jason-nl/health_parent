@@ -1,5 +1,7 @@
 package cn.itcast.health.service;
 
+import cn.itcast.health.entity.PageResult;
+import cn.itcast.health.entity.QueryPageBean;
 import cn.itcast.health.pojo.CheckItem;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -9,4 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @Description
  */
 public interface CheckItemService extends IService<CheckItem> {
+    PageResult<CheckItem> findPage(QueryPageBean pageBean);
+
+    boolean deleteByLogic(int id);
 }
