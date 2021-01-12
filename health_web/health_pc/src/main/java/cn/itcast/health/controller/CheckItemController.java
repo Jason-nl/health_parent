@@ -42,4 +42,14 @@ public class CheckItemController {
         boolean flag = checkItemService.deleteByLogic(id);
         return new Result(flag);
     }
+
+
+    @ApiOperation(value = "查询功能", notes = "查询所有的检查项")
+    @GetMapping("findAll")
+    public Result findAll() {
+        // 逻辑删除
+        return new Result(checkItemService.list());
+    }
+
+
 }
