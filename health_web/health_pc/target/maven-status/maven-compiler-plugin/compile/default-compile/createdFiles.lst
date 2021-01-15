@@ -1,0 +1,6 @@
+cn/itcast/health/PCApplication.class
+cn/itcast/health/config/SwaggerConfig.class
+cn/itcast/health/controller/CheckGroupController.class
+cn/itcast/health/controller/CheckItemController.class
+cn/itcast/health/controller/SetmealController.class
+cn/itcast/health/controller/OrderSettingController.class

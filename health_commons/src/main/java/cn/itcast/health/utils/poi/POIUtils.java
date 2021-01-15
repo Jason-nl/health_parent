@@ -24,7 +24,7 @@ public class POIUtils {
      * @param file 将上传后的文件传入到方法中
      * @throws IOException
      */
-    public static List<String[]> readExcel(MultipartFile file) throws IOException {
+    public static List<String[]> readExcel(MultipartFile file){
         //检查文件是否是一个excel文件
         checkFile(file);
         //获得Workbook工作薄对象
@@ -67,22 +67,26 @@ public class POIUtils {
                     list.add(cells);
                 }
             }
-            workbook.close();
+            try {
+                workbook.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
         return list;
     }
 
     //校验文件是否合法
-    public static void checkFile(MultipartFile file) throws IOException{
+    public static void checkFile(MultipartFile file) {
         //判断文件是否存在
         if(null == file){
-            throw new FileNotFoundException("文件不存在！");
+            throw new RuntimeException("文件不存在！");
         }
         //获得文件名
         String fileName = file.getOriginalFilename();
         //判断文件是否是excel文件
         if(!fileName.endsWith(xlsx)){
-            throw new IOException(fileName + "不是excel文件");
+            throw new RuntimeException(fileName + "不是excel文件");
         }
     }
     public static Workbook getWorkBook(MultipartFile file) {

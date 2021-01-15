@@ -1,0 +1,11 @@
+cn/itcast/health/mapper/OrderSettingMapper.class
+cn/itcast/health/mapper/CheckItemMapper.class
+cn/itcast/health/service/impl/CheckItemServiceImpl.class
+cn/itcast/health/service/impl/OrderSettingServiceImpl.class
+cn/itcast/health/service/impl/SetmealService.class
+cn/itcast/health/AppointmentApplication.class
+cn/itcast/health/service/impl/CheckGroupServiceImpl.class
+cn/itcast/health/mapper/CheckGroupMapper.class
+cn/itcast/health/config/XxlJobConfig.class
+cn/itcast/health/xxl/CleanImgJob.class
+cn/itcast/health/mapper/SetmealMapper.class

@@ -15,11 +15,11 @@ import java.io.InputStream;
 public class AliyunUtils {
 
     // 阿里云主账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM账号进行API访问或日常运维，请登录 https://ram.console.aliyun.com 创建RAM账号。
-    public  static  String accessKeyId = "LTAIA2KE6onERO5f";
-    public  static String accessKeySecret = "raxTWs3twt1k9ESJrS2kUyrDUMFoGx";
+    public  static  String accessKeyId = "LTAI4FxyP4322UX52vK5fsf8";
+    public  static String accessKeySecret = "rb66JOQCwEQXEw5AKWJwABozCw7IvR";
     // Endpoint以杭州为例，其它Region请按实际情况填写。
     public  static  String endpoint = "http://oss-cn-shanghai.aliyuncs.com";
-    public  static  String bucketName = "itcast117";//  空间名称
+    public  static  String bucketName = "ethan-health";//  空间名称
 
 
     /**

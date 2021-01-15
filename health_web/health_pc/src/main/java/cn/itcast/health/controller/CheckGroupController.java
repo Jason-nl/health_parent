@@ -51,4 +51,10 @@ public class CheckGroupController {
         CheckGroupVO checkGroupVO = checkGroupService.findGroupInfoById(id);
         return new Result(checkGroupVO);
     }
+
+    @ApiOperation(value = "查询功能",notes = "查询所有的检查组")
+    @GetMapping("findAll")
+    public Result findAll() {
+        return new Result(checkGroupService.list());
+    }
 }

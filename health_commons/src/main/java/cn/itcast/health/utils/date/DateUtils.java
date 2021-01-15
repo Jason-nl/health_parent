@@ -56,13 +56,16 @@ public class DateUtils {
      *
      * @param date Date类型信息
      * @return 字符串时间
-     * @throws Exception 抛出异常
      */
-    public static String parseDate2String(Date date) throws Exception {
+    public static String parseDate2String(Date date) {
         if (date == null) {
             return null;
         }
-        return parseDate2String(date, "yyyy-MM-dd");
+        try {
+            return parseDate2String(date, "yyyy-MM-dd");
+        } catch (Exception e) {
+            throw new RuntimeException("日期转换字符串异常");
+        }
     }
 
     /**
