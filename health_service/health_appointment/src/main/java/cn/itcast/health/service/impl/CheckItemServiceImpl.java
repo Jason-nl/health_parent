@@ -50,4 +50,10 @@ public class CheckItemServiceImpl extends ServiceImpl<CheckItemMapper,CheckItem>
         checkItem.setIs_delete(1);
         return updateById(checkItem);
     }
+
+    @Override
+    public List<CheckItem> findCheckItemListByGid(Integer gid) {
+        return baseMapper.findCheckItemListByGid(gid);
+    }
+
 }

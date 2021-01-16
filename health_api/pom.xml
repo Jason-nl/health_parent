@@ -27,6 +27,11 @@
             <artifactId>mybatis-plus-extension</artifactId>
             <version>${mybatisplus.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
     </dependencies>
 
 

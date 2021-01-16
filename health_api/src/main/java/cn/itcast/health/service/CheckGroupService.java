@@ -7,6 +7,8 @@ import cn.itcast.health.pojo.CheckGroup;
 import cn.itcast.health.vo.CheckGroupVO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * created by Ethan on 2021/1/12 1:23 下午
  */
@@ -18,4 +20,6 @@ public interface CheckGroupService extends IService<CheckGroup> {
     boolean saveOrUpdateGroup(CheckGroupDTO checkGroupDTO);
 
     CheckGroupVO findGroupInfoById(int id);
+
+    List<CheckGroupVO> findCheckGroupVoById(int id);
 }

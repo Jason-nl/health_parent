@@ -1,6 +1,7 @@
 package cn.itcast.health.mapper;
 
 import cn.itcast.health.pojo.Setmeal;
+import cn.itcast.health.vo.SetmealVO;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
@@ -20,4 +21,7 @@ public interface SetmealMapper extends BaseMapper<Setmeal> {
 
     @Insert("insert into t_setmeal_checkgroup values(#{sid}, #{gid})")
     void insertGroupAndItem(@Param("sid") Integer sid, @Param("gid") Integer gid);
+
+    @Select("select img,name,remark,sex,age from T_SETMEAL where id = #{id}")
+    SetmealVO findSetmealInfoById(@Param("id") int id);
 }

@@ -7,6 +7,8 @@ import cn.itcast.health.pojo.Setmeal;
 import cn.itcast.health.vo.SetmealVO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.Map;
+
 /**
  * created by Ethan on 2021/1/15 9:27 上午
  */
@@ -18,7 +20,9 @@ public interface SetmealService extends IService<Setmeal> {
 
     PageResult<Setmeal> findPage(QueryPageBean pageBean);
 
-    SetmealVO findSetmealInfoById(int id);
+    Map findSetmealInfoById(int id);
 
     void cleanImg();
+
+    SetmealVO findSetMealDetail(int id);
 }

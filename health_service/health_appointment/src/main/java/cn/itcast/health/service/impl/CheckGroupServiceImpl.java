@@ -95,4 +95,10 @@ public class CheckGroupServiceImpl extends ServiceImpl<CheckGroupMapper, CheckGr
         checkGroupVO.setCheckItemIds(checkItemIds);
         return checkGroupVO;
     }
+
+    @Override
+    public List<CheckGroupVO> findCheckGroupVoById(int sid) {
+        return baseMapper.findCheckGroupVoById(sid);
+    }
+
 }

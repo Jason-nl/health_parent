@@ -72,8 +72,7 @@ public class SetmealController {
     @ApiOperation(value = "回显功能",notes = "回显指定的套餐信息")
     @GetMapping("findSetmealInfoById/{id}")
     public Result findSetmealInfoById(@PathVariable("id") int id) {
-        SetmealVO setmealVO = setmealService.findSetmealInfoById(id);
-        return new Result(setmealVO);
+        return new Result(setmealService.findSetmealInfoById(id));
     }
 
 }
